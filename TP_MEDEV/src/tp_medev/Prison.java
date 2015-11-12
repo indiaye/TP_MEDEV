@@ -31,6 +31,10 @@ public class Prison extends Case {
         return "Depart"; 
     }
     
+     /**
+    * Interaction avec un joueur 
+    *  à compléter
+    */
     public void interagir(Joueur j){
         
     }

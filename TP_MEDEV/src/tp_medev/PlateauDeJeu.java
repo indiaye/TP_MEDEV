@@ -20,7 +20,7 @@ public class PlateauDeJeu {
 
     /**
     * Constructeur de la classe Case
-    * @param plateu    Liste des cases
+    * @param plateau    Liste des cases
     * @param joueurs   Liste de joueurs
     */
     public PlateauDeJeu(ArrayList<Case> plateau, LinkedList<Joueur> joueurs) {
