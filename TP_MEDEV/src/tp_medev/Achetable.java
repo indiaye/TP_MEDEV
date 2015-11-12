@@ -122,4 +122,9 @@ public abstract class Achetable extends Case {
     }
     
     public abstract int calculerCout();
+    
+    public void demandeAchatJoueur(Joueur j){
+        
+        System.out.println("");
+    }
 }

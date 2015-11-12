@@ -37,16 +37,6 @@ public class Gare extends Achetable {
     }
 
     /**
-     * Affichage de la case Envoi Gare
-     *
-     * @return Affichage de la case Gare
-     */
-    @Override
-    public String toString() {
-        return "Gare";
-    }
-
-    /**
      * Calcule le montant à payer en cas de passage. Récupère le loyer en
      * fonction du nombre d'habitations.
      *
