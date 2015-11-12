@@ -20,11 +20,11 @@ public abstract class Achetable extends Case {
     // Constructors
 
     /**
-    * Constructeur de la classe Achetable avec proprietaire
+    * Constructeur de la classe Achetable avec propriétaire
     * @param prix         Prix
-    * @param proprietaire Proprietaire
+    * @param proprietaire Propriétaire
     * @param nom          Nom
-    * @param numero       Numero
+    * @param numero       Numéro
     */
     public Achetable(int prix, Joueur proprietaire, String nom, int numero) {
         super(nom, numero);
@@ -33,10 +33,10 @@ public abstract class Achetable extends Case {
     }
 
     /**
-    * Constructeur de la classe Achetable sans proprietaire
+    * Constructeur de la classe Achetable sans propriétaire
     * @param prix         Prix
     * @param nom          Nom
-    * @param numero       Numero
+    * @param numero       Numéro
     */
     public Achetable(int prix, String nom, int numero) {
         super(nom, numero);
@@ -63,7 +63,7 @@ public abstract class Achetable extends Case {
     }  
     
     /**
-    * Constructeur de la classe Achetable avec proprietaire
+    * Vérifie si le terrain est achetable
     * @return Boolean si achetable
     */
     public boolean demandeAchetable() {
