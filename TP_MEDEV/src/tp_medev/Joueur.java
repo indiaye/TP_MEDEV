@@ -155,7 +155,12 @@ public class Joueur {
      * @throws tp_medev.NoMoreMoney
      */
     public void avance(PlateauDeJeu p) throws NoMoreMoney {
-        int d = PlateauDeJeu.lanceLeDe(); // résultat du lancé de dé
+        int d;
+        if (this.emprisonne) {
+            d = 0; // impossible de bouger
+        } else {
+            d = PlateauDeJeu.lanceLeDe(); // résultat du lancé de dé
+        }
         
         // Si on passe par la case départ
         if (p.avance(this.position, d).getNumero() < this.position.getNumero()) {
@@ -166,8 +171,7 @@ public class Joueur {
         this.position = p.avance(position, d);
         
         // On affche les actions à l'écran
-        System.out.println("Le joueur " + this.getNom() + " est à " + this.position.getNom());
-        System.out.println("Le joueur "+this.getNom()+" est en "+this.position.getNom());
+        System.out.println("Le joueur " + this.getNom() + " est en " + this.position.getNom());
         
         // On lance l'intéraction
         this.position.interagir(this);
