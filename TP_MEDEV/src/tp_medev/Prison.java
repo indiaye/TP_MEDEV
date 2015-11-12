@@ -7,11 +7,11 @@ package tp_medev;
 
 /**
  *
- * @author Hicham
+ * @author Quentin
  */
-public class Chance extends Case {
+public class Prison extends Case {
     
     public String toString() {
-        return "Chance";
+        return "Prison";
     }
 }
