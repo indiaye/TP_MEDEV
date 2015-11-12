@@ -85,5 +85,18 @@ public class Constructible extends Achetable {
 
         return resultat;
     }
+    
+    /**
+     * Calcule le montant à payer en cas de passage.
+     * Récupère le loyer en fonction du nombre d'habitations.
+     * @return le montant désiré
+     */
+
+    public int calculerCout() {
+        int montant = this.loyers[posLoyer];       
+        return montant;
+    }
+    
+    
 
 }
