@@ -5,6 +5,9 @@
  */
 package tp_medev;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 /**
  *
  * @author Hicham
@@ -91,8 +94,32 @@ public abstract class Achetable extends Case {
         
     }
     
+    /** Vérifie et demande le loyer au joueur.     * 
+     * Si le joueur est le propriétaire, il ne se passe rien.
+     * Sinon calcule le montant et appelle la méthode paiement dans joueur.
+     * Suppose que la case a un propriétaire.
+     * 
+     * @param j le joueur arrivant sur la case
+     */
     public void demandeLoyer(Joueur j){
         
+        int montant = 0;
+        
+        if (!this.proprietaire.equals(j)){ // vérifie si le joueur concerné n'est pas le propriétaire
+            if (this instanceof Gare){ // s'il s'agit d'une gare, calculer le coût d'une gare
+                montant = ((Gare)this).calculerCout();
+            } else { // sinon calculer le coût d'une propriété lambda
+                montant = ((Constructible)this).calculerCout();
+            }
+            
+            try { // effectue la transaction entre le joueur et le propiétaire
+                j.paiement(this.proprietaire, montant);
+            } catch (NoMoreMoney ex) {
+                Logger.getLogger(Achetable.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+        }
     }
     
+    public abstract int calculerCout();
 }
