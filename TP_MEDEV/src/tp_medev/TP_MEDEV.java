@@ -15,7 +15,10 @@ public class TP_MEDEV {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        
+        PlateauDeJeu plateau = new PlateauDeJeu(null, null);
+        plateau.chargerPlateau("Board.txt");
+    // TODO code application logic here
     }
     
 }
