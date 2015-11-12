@@ -108,7 +108,7 @@ public abstract class Achetable extends Case {
      * @param j le joueur arrivant sur la case
      * @throws tp_medev.NoMoreMoney
      */
-    public void demandeLoyer(Joueur j) {
+    public void demandeLoyer(Joueur j) throws NoMoreMoney {
         
         if (!this.proprietaire.equals(j)) { // vérifie si le joueur concerné n'est pas le propriétaire
             int montant = 0;
@@ -117,12 +117,7 @@ public abstract class Achetable extends Case {
             } else { // sinon calculer le coût d'une propriété lambda
                 montant = ((Constructible) this).calculLoyer(j);
             }
-            
-            try {
                 j.paiement(this.proprietaire, montant); // effectue le paiement du joueur envers le propriétaire
-            } catch (NoMoreMoney ex) {
-                System.out.println(ex.getMessage());
-            }
         }
     }
     
