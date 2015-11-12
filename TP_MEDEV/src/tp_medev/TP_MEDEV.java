@@ -17,8 +17,8 @@ public class TP_MEDEV {
     public static void main(String[] args) {
         
         PlateauDeJeu plateau = new PlateauDeJeu(null, null);
-        plateau.chargerPlateau("Board.txt");
-    // TODO code application logic here
+        plateau.init("Board.txt");
+        plateau.affiche();
     }
     
 }

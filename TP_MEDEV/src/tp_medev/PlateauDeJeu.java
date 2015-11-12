@@ -30,7 +30,6 @@ public class PlateauDeJeu {
      * @param plateu Liste des cases
      * @param joueurs Liste de joueurs
      */
-
     public PlateauDeJeu(ArrayList<Case> plateau, LinkedList<Joueur> joueurs) {
         this.plateau = plateau;
         this.joueurs = joueurs;
@@ -72,11 +71,11 @@ public class PlateauDeJeu {
     public void affiche() {
         System.out.println("- Liste des cases : ");
         for (Case c : plateau) {
-            System.out.println("   + " + c.toString());
+            System.out.println("   + " + c);
         }
         System.out.println("- Liste des joueurs : ");
         for (Joueur j : joueurs) {
-            System.out.println("   + " + j.toString());
+            System.out.println("   + " + j);
         }
     }
 
@@ -160,6 +159,8 @@ public class PlateauDeJeu {
                             plateau.add(new Constructible(Integer.parseInt(mots[2]), Integer.parseInt(mots[3]), Integer.parseInt(mots[4]),
                                     Integer.parseInt(mots[5]), Integer.parseInt(mots[6]), Integer.parseInt(mots[6]), null, mots[0], indice));
                     }
+                    line = buf.readLine();
+                    indice++;
                 }
             } catch (IOException ex) {
                 Logger.getLogger(Monopoly.class.getName()).log(Level.SEVERE, null, ex);
@@ -168,9 +169,6 @@ public class PlateauDeJeu {
         } catch (FileNotFoundException ex) {
             Logger.getLogger(Monopoly.class.getName()).log(Level.SEVERE, null, ex);
         }
-
-        this.joueurs = joueurs;
-        this.plateau = plateau;
     }
 
 }
