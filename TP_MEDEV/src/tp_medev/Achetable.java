@@ -45,15 +45,15 @@ public abstract class Achetable extends Case {
 
     public void setProprietaire(Joueur proprietaire) {
         this.proprietaire = proprietaire;
-    }
-
-    @Override
-    public String toString() {
-        return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (this.proprietaire == null ? "Sans propriétaire" : this.proprietaire.getNom());
-    }
+    }  
     
     public boolean demandeAchetable() {
         return this.proprietaire == null;
+    }
+    
+        @Override
+    public String toString() {
+        return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
     }
     
 }
