@@ -7,11 +7,7 @@ package tp_medev;
  */
 public class Constructible extends Achetable {
 
-    
-    /**
-     * 
-     * @return 
-     */
+
     @Override
     public String toString() {
 
