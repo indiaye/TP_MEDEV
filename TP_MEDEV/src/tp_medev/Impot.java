@@ -11,11 +11,21 @@ package tp_medev;
  */
 public class Impot extends Case {
     
+    // Constructors
+    
+    /**
+    * Constructeur de la classe Impot
+    * @param nom    Nom
+    * @param numero Numero
+    */
     public Impot(String nom, int numero) {
         super(nom, numero);
     }
     
-    
+    /**
+    * Affichage de la case Envoi Gare
+    * @return Affichage de la case Gare
+    */
     @Override
     public String toString() {
         return "Impot";

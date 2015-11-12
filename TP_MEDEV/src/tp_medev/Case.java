@@ -46,9 +46,10 @@ public abstract class Case {
     }    
     
     /**
-    * Méthode abstraite d'affichage des cases
-    * @return Affichage des cases
-    */
+     * @author jvuil
+     * Méthode abstraite d'affichage des cases
+     * @return String de l'objet Case
+     */
     @Override
     public abstract String toString();
     
