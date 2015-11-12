@@ -64,7 +64,7 @@ public abstract class Achetable extends Case {
     
     /**
     * Vérifie si le terrain est achetable
-    * @return Boolean si achetable
+    * @return Vrai si achetable
     */
     public boolean demandeAchetable() {
         return this.proprietaire == null;
