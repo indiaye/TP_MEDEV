@@ -29,7 +29,7 @@ public class Joueur {
      * @param fortune Fortune
      * @param position Position
      * @param possession Liste des possessions
-     * @param emprisonne Statut de liberte
+     * @param emprisonne Statut de liberté
      * @param nbToursAtt Nombre de tours de prison restants
      */
     public Joueur(String nom, int fortune, Case position, ArrayList<Achetable> possession, boolean emprisonne, int nbToursAtt) {
@@ -111,7 +111,7 @@ public class Joueur {
     }
 
     /**
-     * Methode permettant le paiement entre deux joueurs
+     * Méthode permettant le paiement entre deux joueurs
      *
      * @param j joueur à payer
      * @param montant somme à payer
