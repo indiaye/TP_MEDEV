@@ -157,7 +157,11 @@ public class Joueur {
             this.setFortune(this.getFortune() + 20000); // on lui rajoute 20 000 €
         }
         this.position = p.avance(position, d);
+<<<<<<< HEAD
         System.out.println("Le joueur " + this.getNom() + " est à " + this.position.getNom());
+=======
+        System.out.println("Le joueur "+this.getNom()+" est en "+this.position.getNom());
+>>>>>>> origin/master
         this.position.interagir(this);
     }
 }

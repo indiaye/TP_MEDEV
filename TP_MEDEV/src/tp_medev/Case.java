@@ -55,5 +55,4 @@ public abstract class Case {
     
     public abstract void interagir(Joueur j);
     
-    // public abstract void interagir(Joueur j);
 }
