@@ -14,6 +14,8 @@ public abstract class Achetable extends Case {
     private int prix;
     private Joueur proprietaire;
 
+    // Constructors
+
     /**
     * Constructeur de la classe Achetable avec proprietaire
     * @param prix         Prix
@@ -21,24 +23,18 @@ public abstract class Achetable extends Case {
     * @param nom          Nom
     * @param numero       Numero
     */
-
-    // Constructors
-
     public Achetable(int prix, Joueur proprietaire, String nom, int numero) {
         super(nom, numero);
         this.prix = prix;
         this.proprietaire = proprietaire;
     }
-    
+
     /**
     * Constructeur de la classe Achetable sans proprietaire
     * @param prix         Prix
     * @param nom          Nom
     * @param numero       Numero
     */
-
-    // Constructeur par défault de la classe Achetable (affectation d'un proprietaire null)
-
     public Achetable(int prix, String nom, int numero) {
         super(nom, numero);
         this.prix = prix;
@@ -74,6 +70,29 @@ public abstract class Achetable extends Case {
     @Override
     public String toString() {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
+    }
+    
+    /**
+     * Interaction avec une case lambda.
+     * Vérifie si la case a un propriétaire ou non.
+     * Si c'est le cas, demande au joueur s'il souhaite l'acheter.
+     * Sinon vérifie s'il a un loyer à payer (et le lui fait payer)
+     * @param j le joueur concerné
+     */
+    public void interagir(Joueur j){
+        if(this.proprietaire == null){
+            this.demandeAchat(j);
+        } else {
+            this.demandeLoyer(j);
+        }
+    }
+    
+    public void demandeAchat(Joueur j){
+        
+    }
+    
+    public void demandeLoyer(Joueur j){
+        
     }
     
 }

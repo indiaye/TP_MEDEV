@@ -18,17 +18,27 @@ public class Joueur {
     private Case position;
     private ArrayList<Achetable> possession;
     private boolean emprisonne;
-    private int nbtoursatt;
+    private int nbToursAtt;
     
     // Constructors
 
-    public Joueur(String nom, int fortune, Case position, ArrayList<Achetable> possession, boolean emprisonne, int nbtoursatt) {
+    /**
+    * Constructeur de la classe Joueur
+    * @param nom        Nom
+    * @param fortune    Fortune
+    * @param position   Position
+    * @param possession Liste des possessions
+    * @param emprisonne Statut de liberte
+    * @param nbToursAtt Nombre de tours de prison restans
+    * @param numero     Numero
+    */
+    public Joueur(String nom, int fortune, Case position, ArrayList<Achetable> possession, boolean emprisonne, int nbToursAtt) {
         this.nom = nom;
         this.fortune = fortune;
         this.position = position;
         this.possession = possession;
         this.emprisonne = emprisonne;
-        this.nbtoursatt = nbtoursatt;
+        this.nbToursAtt = nbToursAtt;
     }
     
     // Getters
@@ -54,7 +64,7 @@ public class Joueur {
     }
 
     public int getNbtoursatt() {
-        return nbtoursatt;
+        return nbToursAtt;
     }   
     
     
@@ -80,8 +90,8 @@ public class Joueur {
         this.emprisonne = emprisonne;
     }
 
-    public void setNbtoursatt(int nbtoursatt) {
-        this.nbtoursatt = nbtoursatt;
+    public void setNbToursAtt(int nbToursAtt) {
+        this.nbToursAtt = nbToursAtt;
     }
     
     /**
@@ -108,7 +118,9 @@ public class Joueur {
             j.setFortune(j.getFortune()+montant);
         }
         else{
-            throw new NoMoreMoney();
+            j.setFortune(j.getFortune()+this.getFortune()); // le joueur donne tout ce qu'il lui reste !!
+            this.fortune = 0;  // le joueur perdant passe à 0
+            throw new NoMoreMoney(); // exception lancée (veut dire qu'il est en bankrupt)
         }
     }
 }

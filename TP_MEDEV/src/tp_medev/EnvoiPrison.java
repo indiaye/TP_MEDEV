@@ -19,4 +19,15 @@ public class EnvoiPrison extends Case {
     public String toString() {
         return "Envoi Prison";
     }
+    
+    /**
+     * Envoie un joueur en prison.
+     * L'affecte à la case prison, et rend le booléen emprisonne "vrai".
+     * A COMPLETER/VERIFIER
+     * @param j le joueur concerné 
+     */
+    public void interagir(Joueur j){
+        j.setEmprisonne(true);
+        
+    }
 }
