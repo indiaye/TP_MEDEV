@@ -50,6 +50,8 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }  
     
-    
+    public boolean demandeAchetable() {
+        return this.proprietaire == null;
+    }
     
 }
