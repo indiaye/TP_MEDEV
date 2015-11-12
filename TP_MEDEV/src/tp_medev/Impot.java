@@ -30,4 +30,9 @@ public class Impot extends Case {
     public String toString() {
         return "Impot";
     }
+    
+    @Override
+    public void interagir(Joueur j) {
+        
+    }
 }
