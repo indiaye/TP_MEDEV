@@ -13,6 +13,18 @@ public class Chance extends Case {
 
     private int nb;
 
+    // Constructors
+    
+    /**
+     * Constructeur de la classe Case
+     *
+     * @param nom Nom
+     * @param numero Numero
+     */
+    public Chance(String nom, int numero) {
+        super(nom, numero);
+    }
+    
     /**
      * Get the value of nb
      *
@@ -31,17 +43,6 @@ public class Chance extends Case {
         this.nb = nb;
     }
 
-    // Constructors
-    /**
-     * Constructeur de la classe Case
-     *
-     * @param nom Nom
-     * @param numero Numero
-     */
-    public Chance(String nom, int numero) {
-        super(nom, numero);
-    }
-
     /**
      * Affichage de la case Chance
      *
@@ -50,5 +51,10 @@ public class Chance extends Case {
     @Override
     public String toString() {
         return "Chance";
+    }
+    
+    @Override
+    public void interagir(Joueur j) {
+        
     }
 }
