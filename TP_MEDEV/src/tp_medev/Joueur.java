@@ -123,6 +123,7 @@ public class Joueur {
             throw new NoMoreMoney(); // exception lancée (veut dire qu'il est en bankrupt)
         }
     }
+    
     // Not tested yet. manque case.getnom et achetable.tostring(gare et constructible) PAUSE CLOPE
     public String toString(){
         String res="";
@@ -132,5 +133,20 @@ public class Joueur {
             res=res+a.toString();
         }
         res=res+"\n"+"Position : "+position.getNom();    
+    }
+    
+    /**
+    * prend en paramètre le plateau de jeu, est appelée par le Joueur
+    * avance d'une position, vérifie si on est passé par la case départ (dans ce cas + 20000€)
+    * et on appelle la fonction interagir de la nouvelle case
+    * la position du joueur est modifiée
+    */
+    public void avance(PlateauDeJeu p){
+        int d = PlateauDeJeu.lanceLeDe(); // résultat du lancé de dé
+        if(p.avance(this.position, d).getNumero() < this.position.getNumero()) {// on est passé par la case départ
+            this.setFortune(this.getFortune()+20000); // on lui rajoute 20 000 €
+        }
+        this.position = p.avance(position, d);
+        this.position.interagir(this);
     }
 }
