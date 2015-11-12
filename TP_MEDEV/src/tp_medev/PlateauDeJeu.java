@@ -18,6 +18,11 @@ public class PlateauDeJeu {
     
     // Constructors
 
+    /**
+    * Constructeur de la classe Case
+    * @param plateu    Liste des cases
+    * @param joueurs   Liste de joueurs
+    */
     public PlateauDeJeu(ArrayList<Case> plateau, LinkedList<Joueur> joueurs) {
         this.plateau = plateau;
         this.joueurs = joueurs;
