@@ -7,17 +7,16 @@ package tp_medev;
 
 /**
  *
- * @author Hicham
+ * @author Seb
  */
-public class Chance extends Case {
+public class Gare extends Achetable {
 
-    public Chance(String nom, int numero) {
-        super(nom, numero);
+    public Gare(int prix, Joueur proprietaire, String nom, int numero) {
+        super(prix, proprietaire, nom, numero);
     }
-    
-    
+
     @Override
     public String toString() {
-        return "Chance";
-    }
+        return "Gare"; 
+    }   
 }

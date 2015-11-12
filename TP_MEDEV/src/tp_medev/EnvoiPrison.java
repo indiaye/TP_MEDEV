@@ -7,17 +7,16 @@ package tp_medev;
 
 /**
  *
- * @author Hicham
+ * @author jvuil
  */
-public class Chance extends Case {
+public class EnvoiPrison extends Case {
 
-    public Chance(String nom, int numero) {
+    public EnvoiPrison(String nom, int numero) {
         super(nom, numero);
     }
     
-    
     @Override
     public String toString() {
-        return "Chance";
+        return "Envoi Prison";
     }
 }

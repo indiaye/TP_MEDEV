@@ -10,15 +10,24 @@ package tp_medev;
  * @author Hicham
  */
 public abstract class Achetable extends Case {
+    
+    // TEST
     private int prix;
     private Joueur proprietaire;
     
     // Constructors
 
-    public Achetable(int prix, Joueur proprietaire, String Nom, int Numero) {
-        super(Nom, Numero);
+    public Achetable(int prix, Joueur proprietaire, String nom, int numero) {
+        super(nom, numero);
         this.prix = prix;
         this.proprietaire = proprietaire;
+    }
+    
+    // Constructeur par défault de la classe Achetable (affectation d'un proprietaire null)
+    public Achetable(int prix, String nom, int numero) {
+        super(nom, numero);
+        this.prix = prix;
+        this.proprietaire = null;
     }
     
     // Getters
