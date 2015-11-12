@@ -29,5 +29,14 @@ public class Depart extends Case {
     @Override
     public String toString() {
         return "Depart"; 
-    }   
+    }
+    
+    /**
+     * Méthode régissant le passage par la case départ.
+     * Augmente la fortune d'un joueur de 400 €
+     * @param j 
+     */
+    public void interagir(Joueur j){
+        j.setFortune(j.getFortune() + 400);        
+    }
 }

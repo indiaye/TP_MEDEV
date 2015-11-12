@@ -11,21 +11,23 @@ package tp_medev;
  */
 public class EnvoiPrison extends Case {
 
-    /**
-    * Constructeur de la classe EnvoiPrison
-    * @param nom          Nom
-    * @param numero       Numero
-    */
     public EnvoiPrison(String nom, int numero) {
         super(nom, numero);
     }
     
-    /**
-    * Affichage de la case Envoi Prison
-    * @return Affichage de la case Envoi Prison
-    */
     @Override
     public String toString() {
         return "Envoi Prison";
+    }
+    
+    /**
+     * Envoie un joueur en prison.
+     * L'affecte à la case prison, et rend le booléen emprisonne "vrai".
+     * A COMPLETER/VERIFIER
+     * @param j le joueur concerné 
+     */
+    public void interagir(Joueur j){
+        j.setEmprisonne(true);
+        
     }
 }

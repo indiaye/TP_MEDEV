@@ -29,5 +29,9 @@ public class Prison extends Case {
     @Override
     public String toString() {
         return "Depart"; 
-    }   
+    }
+    
+    public void interagir(Joueur j){
+        
+    }
 }

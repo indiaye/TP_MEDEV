@@ -72,4 +72,27 @@ public abstract class Achetable extends Case {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
     }
     
+    /**
+     * Interaction avec une case lambda.
+     * Vérifie si la case a un propriétaire ou non.
+     * Si c'est le cas, demande au joueur s'il souhaite l'acheter.
+     * Sinon vérifie s'il a un loyer à payer (et le lui fait payer)
+     * @param j le joueur concerné
+     */
+    public void interagir(Joueur j){
+        if(this.proprietaire == null){
+            this.demandeAchat(j);
+        } else {
+            this.demandeLoyer(j);
+        }
+    }
+    
+    public void demandeAchat(Joueur j){
+        
+    }
+    
+    public void demandeLoyer(Joueur j){
+        
+    }
+    
 }
