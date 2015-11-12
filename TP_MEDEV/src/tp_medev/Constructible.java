@@ -82,6 +82,15 @@ public class Constructible extends Achetable {
 
         return resultat;
     }
+    
+    /**
+     * Calcul du coût de construction
+     * @return Cout de construction
+     */
+    @Override
+    public int calculerCout() {
+        return 0;
+    }
 
     public int calculLoyer(Joueur joueur) {
         int loyer = 0;
@@ -95,5 +104,9 @@ public class Constructible extends Achetable {
 
         return loyer;
 
+    }
+    
+    public void demandeConstruction(Joueur j){
+        
     }
 }
