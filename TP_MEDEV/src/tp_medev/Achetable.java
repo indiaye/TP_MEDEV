@@ -11,18 +11,34 @@ package tp_medev;
  */
 public abstract class Achetable extends Case {
 
-    // TEST
     private int prix;
     private Joueur proprietaire;
 
+    /**
+    * Constructeur de la classe Achetable avec proprietaire
+    * @param prix         Prix
+    * @param proprietaire Proprietaire
+    * @param nom          Nom
+    * @param numero       Numero
+    */
+
     // Constructors
+
     public Achetable(int prix, Joueur proprietaire, String nom, int numero) {
         super(nom, numero);
         this.prix = prix;
         this.proprietaire = proprietaire;
     }
+    
+    /**
+    * Constructeur de la classe Achetable sans proprietaire
+    * @param prix         Prix
+    * @param nom          Nom
+    * @param numero       Numero
+    */
 
     // Constructeur par défault de la classe Achetable (affectation d'un proprietaire null)
+
     public Achetable(int prix, String nom, int numero) {
         super(nom, numero);
         this.prix = prix;
@@ -47,11 +63,15 @@ public abstract class Achetable extends Case {
         this.proprietaire = proprietaire;
     }  
     
+    /**
+    * Constructeur de la classe Achetable avec proprietaire
+    * @return Boolean si achetable
+    */
     public boolean demandeAchetable() {
         return this.proprietaire == null;
     }
     
-        @Override
+    @Override
     public String toString() {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
     }

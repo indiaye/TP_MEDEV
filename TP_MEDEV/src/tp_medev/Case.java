@@ -15,6 +15,11 @@ public abstract class Case {
     
     // Constructors
 
+    /**
+    * Constructeur de la classe Case
+    * @param nom    Nom
+    * @param numero Numero
+    */
     public Case(String nom, int numero) {
         this.nom = nom;
         this.numero = numero;
@@ -46,4 +51,6 @@ public abstract class Case {
      */
     @Override
     public abstract String toString();
+    
+    // public abstract void interagir(Joueur j);
 }
