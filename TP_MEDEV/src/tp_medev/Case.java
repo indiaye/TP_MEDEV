@@ -53,5 +53,7 @@ public abstract class Case {
     @Override
     public abstract String toString();
     
+    public abstract void interagir(Joueur j);
+    
     // public abstract void interagir(Joueur j);
 }
