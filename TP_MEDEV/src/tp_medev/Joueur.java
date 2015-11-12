@@ -141,12 +141,13 @@ public class Joueur {
     * et on appelle la fonction interagir de la nouvelle case
     * la position du joueur est modifiée
     */
-    public void avance(PlateauDeJeu p){
+    public void avance(PlateauDeJeu p) throws NoMoreMoney {
         int d = PlateauDeJeu.lanceLeDe(); // résultat du lancé de dé
         if(p.avance(this.position, d).getNumero() < this.position.getNumero()) {// on est passé par la case départ
             this.setFortune(this.getFortune()+20000); // on lui rajoute 20 000 €
         }
         this.position = p.avance(position, d);
+        System.out.println("Le joueur "+this.getNom()+" est à "+this.position.getNom());
         this.position.interagir(this);
     }
 }
