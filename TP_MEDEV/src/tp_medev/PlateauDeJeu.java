@@ -75,7 +75,8 @@ public class PlateauDeJeu {
     }
     
     public Case avance(Case c, int d){
-        
+        c.setNumero(d);
+        return c;
     }
     
     // Lance le dé pour avancer
