@@ -3,7 +3,7 @@ Mediteranean Avenue - 60 - 2 - 10 - 250 - 50 - 50
 Community Chest
 Baltic Avenue - 60 - 4 - 20 - 450 - 50 - 50
 Income Tax - 200
-Reading Railroad - 200 
+Reading Railroad - 200 - 25
 Oriental Avenue - 100 - 6 - 30 - 550 - 50 - 50
 Chance
 Vermont Avenue - 100 - 6 - 30 - 550 - 50 - 50
@@ -13,7 +13,7 @@ St. Charles Place - 140 - 10 - 50 - 750 - 100 - 100
 Electric Company - 150 
 States Avenue - 140 - 10 - 50 - 750 - 100 - 100
 Virginia Avenue - 60 - 12 - 60 - 900 - 100 - 100
-Pennsylvania Railroad - 200
+Pennsylvania Railroad - 200 - 25
 St. James Place - 180 - 14 - 70 - 950 - 100 - 100
 Community Chest
 Tennessee Avenue - 180 - 14 - 70 - 950 - 100 - 100
@@ -23,7 +23,7 @@ Kentucky Avenue - 220 - 18 - 90 - 1050 - 150 - 150
 Chance
 Indiana Avenue - 220 - 18 - 90 - 1050 - 150 - 150
 Illinois Avenue - 240 - 20 - 100 - 1100 - 150 - 150
-B&O Railroad - 200 
+B&O Railroad - 200 - 25
 Atlantic Avenue - 260 - 22 - 110 - 1150 - 150 - 150
 Ventnor Avenue = 260 - 22 - 110 - 1150 - 150 - 150
 Water Works - 150
@@ -33,7 +33,7 @@ Pacific Avenue - 300 - 26 - 130 - 1275 - 200 - 200
 North Carolina Avenue - 300 - 26 - 130 - 1275 - 200 - 200
 Community Chest
 Pennsylvania Avenue - 320 - 28 - 150 - 1400 - 200 - 200
-Short Line - 200
+Short Line - 200 - 25
 Chance
 Park Palace - 350 - 35 - 175 - 1500 - 200 - 200
 Luxury Tax - 100

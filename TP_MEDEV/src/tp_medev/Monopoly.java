@@ -61,7 +61,7 @@ public class Monopoly {
                         case 15:
                         case 25:
                         case 35:
-                            plateau.add(new Gare(Integer.parseInt(mots[1]), null, mots[0], indice));
+                            plateau.add(new Gare(Integer.parseInt(mots[1]), null, mots[0], indice, Integer.parseInt(mots[2])));
                             break;
 
                         //Prison
