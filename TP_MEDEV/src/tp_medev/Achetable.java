@@ -5,6 +5,7 @@
  */
 package tp_medev;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -121,8 +122,21 @@ public abstract class Achetable extends Case {
     
     public abstract int calculLoyer(Joueur j);
     
-    public void demandeAchatJoueur(Joueur j){
+    public void demandeAchatJoueur(Joueur j) throws NoMoreMoney{
         
-        System.out.println("");
+        System.out.println("Voulez vous acheter cette propriété? Oui (1) ou Non (0)");
+        Scanner scan = new Scanner (System.in);
+        int choix = scan.nextInt();
+        if (choix==1){
+            if (j.getFortune()-prix>0){
+                j.setFortune(j.getFortune()-prix);
+                proprietaire=j;
+            }
+            else{
+                throw new NoMoreMoney();
+            }
+        }
+        
+        
     }
 }
