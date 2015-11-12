@@ -11,12 +11,11 @@ package tp_medev;
  */
 public class Gare extends Achetable {
 
+    
+
+    
     public Gare(int prix, Joueur proprietaire, String nom, int numero) {
         super(prix, proprietaire, nom, numero);
     }
 
-    @Override
-    public String toString() {
-        return "Gare"; 
-    }   
 }
