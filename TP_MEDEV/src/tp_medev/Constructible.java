@@ -1,18 +1,21 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package tp_medev;
 
 /**
  *
  * @author jvuil
  */
-public class Constructible extends {
+public class Constructible extends Achetable {
 
+    
+    /**
+     * 
+     * @return 
+     */
+    @Override
     public String toString() {
 
+        
         String resultat = super.toString() + ", ";
         switch (posloyer) {
             case 0:
