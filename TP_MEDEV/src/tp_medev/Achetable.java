@@ -10,6 +10,8 @@ package tp_medev;
  * @author Hicham
  */
 public abstract class Achetable extends Case {
+    
+    // TEST
     private int prix;
     private Joueur proprietaire;
     
