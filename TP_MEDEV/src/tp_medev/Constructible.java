@@ -105,4 +105,8 @@ public class Constructible extends Achetable {
         return loyer;
 
     }
+    
+    public void demandeConstruction(Joueur j){
+        
+    }
 }
