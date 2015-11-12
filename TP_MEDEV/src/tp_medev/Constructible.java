@@ -7,7 +7,7 @@ package tp_medev;
  */
 public class Constructible extends Achetable {
 
-     private int a;
+    private int a;
     private int b;
     private int coutMaison ;
     private int coutHotel;

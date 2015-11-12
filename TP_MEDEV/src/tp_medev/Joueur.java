@@ -108,7 +108,9 @@ public class Joueur {
             j.setFortune(j.getFortune()+montant);
         }
         else{
-            throw new NoMoreMoney();
+            j.setFortune(j.getFortune()+this.getFortune()); // le joueur donne tout ce qu'il lui reste !!
+            this.fortune = 0;  // le joueur perdant passe à 0
+            throw new NoMoreMoney(); // exception lancée (veut dire qu'il est en bankrupt)
         }
     }
 }
