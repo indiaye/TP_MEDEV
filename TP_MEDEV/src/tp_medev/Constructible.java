@@ -43,8 +43,8 @@ public class Constructible extends Achetable {
     }
 
     /**
-    * Utilisée uniquement dans le constructeur
-    */
+     * Utilisée uniquement dans le constructeur
+     */
     public void remplirLoyer() {
         for (int i = 1; i < 5; i++) {
             loyers[i] = a * i;
@@ -57,10 +57,12 @@ public class Constructible extends Achetable {
     }
 
     /**
-    * Affichage de la classe Constructible
-    * @return Affichage de la classe Constructible
-    */
+     * Affichage de la classe Constructible
+     *
+     * @return Affichage de la classe Constructible
+     */
     @Override
+
     public String toString() {
 
         String resultat = super.toString() + ", ";
