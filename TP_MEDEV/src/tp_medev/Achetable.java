@@ -70,6 +70,10 @@ public abstract class Achetable extends Case {
         return this.proprietaire == null;
     }
     
+    /**
+     * Affichage de classe Achetable
+     * @return Affichage de la classe Achetable
+     */
     @Override
     public String toString() {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
@@ -82,6 +86,7 @@ public abstract class Achetable extends Case {
      * Sinon vérifie s'il a un loyer à payer (et le lui fait payer)
      * @param j le joueur concerné
      */
+    @Override
     public void interagir(Joueur j){
         if(this.proprietaire == null){
             this.demandeAchat(j);
@@ -102,17 +107,22 @@ public abstract class Achetable extends Case {
      * @param j le joueur arrivant sur la case
      */
     public void demandeLoyer(Joueur j){
+        // Déclaration des varaibles
+        int montant;
         
-        int montant = 0;
-        
-        if (!this.proprietaire.equals(j)){ // vérifie si le joueur concerné n'est pas le propriétaire
-            if (this instanceof Gare){ // s'il s'agit d'une gare, calculer le coût d'une gare
+        // vérifie si le joueur concerné n'est pas le propriétaire
+        if (!this.proprietaire.equals(j)){
+            // S'il s'agit d'une gare, calculer le coût d'une gare
+            if (this instanceof Gare){ 
                 montant = ((Gare)this).calculerCout();
-            } else { // sinon calculer le coût d'une propriété lambda
+            } 
+            // Sinon calculer le coût d'une propriété lambda
+            else { 
                 montant = ((Constructible)this).calculerCout();
             }
             
-            try { // effectue la transaction entre le joueur et le propiétaire
+            // Effectue la transaction entre le joueur et le propiétaire
+            try { 
                 j.paiement(this.proprietaire, montant);
             } catch (NoMoreMoney ex) {
                 Logger.getLogger(Achetable.class.getName()).log(Level.SEVERE, null, ex);
