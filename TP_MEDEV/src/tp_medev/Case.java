@@ -45,4 +45,6 @@ public abstract class Case {
      * @return String de l'objet Case
      */
     public abstract String toString();
+    
+    // public abstract void interagir(Joueur j);
 }

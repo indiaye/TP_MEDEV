@@ -16,12 +16,6 @@ public class TP_MEDEV {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-<<<<<<< HEAD
-        // test fork
-        
-        // Commentaire test
-=======
->>>>>>> origin/master
     }
     
 }

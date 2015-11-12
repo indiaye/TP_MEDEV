@@ -9,6 +9,15 @@ package tp_medev;
  *
  * @author Hicham
  */
-public class Impot {
+public class Impot extends Case {
     
+    public Impot(String nom, int numero) {
+        super(nom, numero);
+    }
+    
+    
+    @Override
+    public String toString() {
+        return "Impot";
+    }
 }

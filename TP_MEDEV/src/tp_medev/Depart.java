@@ -7,7 +7,6 @@ package tp_medev;
 
 /**
  *
-<<<<<<< HEAD
  * @author Seb
  */
 public class Depart extends Case {
