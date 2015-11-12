@@ -10,6 +10,12 @@ package tp_medev;
  * @author Olivier
  */
 class NoMoreMoney extends Exception {
+    
+    // Constructors
+    
+    /**
+    * Constructeur de la classe NoMoreMoney
+    */
     public NoMoreMoney() {
         super("Vous n'avez pas assez d'argent !");
     }
