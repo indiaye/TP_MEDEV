@@ -85,12 +85,9 @@ public class Constructible extends Achetable {
     
     /**
      * Calcul du coût de construction
+     * @param joueur
      * @return Cout de construction
      */
-    @Override
-    public int calculerCout() {
-        return 0;
-    }
 
     public int calculLoyer(Joueur joueur) {
         int loyer = 0;

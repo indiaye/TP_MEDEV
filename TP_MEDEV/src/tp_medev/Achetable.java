@@ -107,9 +107,9 @@ public abstract class Achetable extends Case {
         
         if (!this.proprietaire.equals(j)){ // vérifie si le joueur concerné n'est pas le propriétaire
             if (this instanceof Gare){ // s'il s'agit d'une gare, calculer le coût d'une gare
-                montant = ((Gare)this).calculerCout();
+                montant = ((Gare)this).calculLoyer(j);
             } else { // sinon calculer le coût d'une propriété lambda
-                montant = ((Constructible)this).calculerCout();
+                montant = ((Constructible)this).calculLoyer(j);
             }
             
             try { // effectue la transaction entre le joueur et le propiétaire
@@ -121,5 +121,5 @@ public abstract class Achetable extends Case {
         }
     }
     
-    public abstract int calculerCout();
+    public abstract int calculLoyer(Joueur j);
 }

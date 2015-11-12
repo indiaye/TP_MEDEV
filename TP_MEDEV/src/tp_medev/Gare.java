@@ -50,13 +50,9 @@ public class Gare extends Achetable {
      * Calcule le montant à payer en cas de passage. Récupère le loyer en
      * fonction du nombre d'habitations.
      *
+     * @param joueur
      * @return le montant désiré
      */
-    @Override
-    public int calculerCout() {
-        int montant = this.getCoefGare() * this.getProprietaire().nbGares();
-        return montant;
-    }
 
     public int calculLoyer(Joueur joueur) {
         int loyer;
@@ -64,7 +60,7 @@ public class Gare extends Achetable {
         
         try {
             if ((this.getProprietaire() != null) && (!joueur.getNom().equals(this.getProprietaire().getNom()))) {
-                loyer = this.getProprietaire().nbGares() * 2500;
+                loyer = this.getProprietaire().nbGares() * this.coefGare;
             }
         } catch (NullPointerException e) {
             System.out.println(e.getMessage());
