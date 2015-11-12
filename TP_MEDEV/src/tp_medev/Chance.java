@@ -10,8 +10,13 @@ package tp_medev;
  * @author Hicham
  */
 public class Chance extends Case {
+
+    public Chance(String nom, int numero) {
+        super(nom, numero);
+    }
     
     
+    @Override
     public String toString() {
         return "Chance";
     }

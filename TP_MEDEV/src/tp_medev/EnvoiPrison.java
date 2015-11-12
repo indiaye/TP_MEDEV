@@ -11,6 +11,10 @@ package tp_medev;
  */
 public class EnvoiPrison extends Case {
 
+    public EnvoiPrison(String nom, int numero) {
+        super(nom, numero);
+    }
+    
     @Override
     public String toString() {
         return "Envoi Prison";
