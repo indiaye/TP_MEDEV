@@ -74,8 +74,8 @@ public class PlateauDeJeu {
         }
     }
     
-    public void avance(Case c, int d){
-
+    public Case avance(Case c, int d){
+        
     }
     
     // Lance le dé pour avancer
