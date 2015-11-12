@@ -11,10 +11,19 @@ package tp_medev;
  */
 public class EnvoiPrison extends Case {
 
+    /**
+    * Constructeur de la classe EnvoiPrison
+    * @param nom          Nom
+    * @param numero       Numero
+    */
     public EnvoiPrison(String nom, int numero) {
         super(nom, numero);
     }
     
+    /**
+    * Affichage de la case Envoi Prison
+    * @return Affichage de la case Envoi Prison
+    */
     @Override
     public String toString() {
         return "Envoi Prison";
