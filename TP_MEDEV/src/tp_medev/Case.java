@@ -40,5 +40,8 @@ public abstract class Case {
         this.Numero = Numero;
     }    
     
-    
+    /**
+     * @author jvuil
+     */
+    public abstract String toString();
 }
