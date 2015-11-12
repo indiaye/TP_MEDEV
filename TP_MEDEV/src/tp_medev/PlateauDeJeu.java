@@ -19,12 +19,11 @@ import java.util.logging.Logger;
  * @author Hicham
  */
 public class PlateauDeJeu {
-    
+
     private ArrayList<Case> plateau;
     private LinkedList<Joueur> joueurs;
-    
-    // Constructors
 
+    // Constructors
     /**
      * Constructeur de la classe Case
      *
@@ -35,9 +34,8 @@ public class PlateauDeJeu {
         this.plateau = plateau;
         this.joueurs = joueurs;
     }
-    
-    // Setters
 
+    // Setters
     public void setPlateau(ArrayList<Case> plateau) {
         this.plateau = plateau;
     }
@@ -45,9 +43,8 @@ public class PlateauDeJeu {
     public void setJoueurs(LinkedList<Joueur> joueurs) {
         this.joueurs = joueurs;
     }
-    
-    // Getters
 
+    // Getters
     public ArrayList<Case> getPlateau() {
         return plateau;
     }
@@ -55,23 +52,24 @@ public class PlateauDeJeu {
     public LinkedList<Joueur> getJoueurs() {
         return joueurs;
     }
-    
+
     // Autres méthodes A COMPLETER ET COMMENTER
-    
-    public void initPlateau(){
-        
+    public void initPlateau() {
+
     }
-    
-    /** nbGares 
-     * Prend en paramètre le Joueur, et retourne son nombre de gare possédées
+
+    /**
+     * nbGares Prend en paramètre le Joueur, et retourne son nombre de gare
+     * possédées
+     *
      * @param j joueur
      * @return nombre de gares possédées
      */
-    public int nbGares(Joueur j){
+    public int nbGares(Joueur j) {
         return j.nbGares();
     }
 
-    public void affiche(){
+    public void affiche() {
         System.out.println("- Liste des cases : ");
         for (Case c : plateau) {
             System.out.println("   + " + c);
@@ -81,27 +79,28 @@ public class PlateauDeJeu {
             System.out.println("   + " + j);
         }
     }
-    
-    public Case avance(Case c, int d){
+
+    public Case avance(Case c, int d) {
         c.setNumero(d);
         return c;
     }
-    
-    /** Lance le dé pour avancer
-     *  Détermine une valeur aléatoire 
+
+    /**
+     * Lance le dé pour avancer Détermine une valeur aléatoire
+     *
      * @return Une valeur de dé
      */
-
     public static int lanceLeDe() {
         return ((int) Math.floor(Math.random() * 6)) + 1;
     }
-    
+
     /**
      * return true s'il n'y a plus qu'un joueur en jeu, false sinon
-     * @return 
+     *
+     * @return
      */
-    public boolean findePartie(){
-        return joueurs.size()==1;
+    public boolean findePartie() {
+        return joueurs.size() == 1;
     }
 
     public void tourDeJeu() {
@@ -113,7 +112,7 @@ public class PlateauDeJeu {
         this.plateau = new ArrayList<>();
         this.joueurs = new LinkedList<>();
         try {
-            Reader reader = new FileReader(filename);
+            Reader reader = new FileReader("src/tp_medev/" + filename);
             BufferedReader buf = new BufferedReader(reader);
             String line;
             try {
@@ -130,8 +129,11 @@ public class PlateauDeJeu {
                         //Chance    
                         case 2:
                         case 7:
+                        case 12:
                         case 17:
+                        case 20:
                         case 22:
+                        case 28:
                         case 33:
                         case 36:
                             plateau.add(new Chance(mots[0], indice));
@@ -161,9 +163,10 @@ public class PlateauDeJeu {
                             plateau.add(new EnvoiPrison(mots[0], indice));
                             break;
 
+                            //Free Parking
                         default:
-                            plateau.add(new Constructible(Integer.parseInt(mots[2]), Integer.parseInt(mots[3]), Integer.parseInt(mots[4]),
-                                    Integer.parseInt(mots[5]), Integer.parseInt(mots[6]), Integer.parseInt(mots[6]), null, mots[0], indice));
+                            plateau.add(new Constructible(Integer.parseInt(mots[1]), Integer.parseInt(mots[2]), Integer.parseInt(mots[3]),
+                                    Integer.parseInt(mots[4]), Integer.parseInt(mots[5]), Integer.parseInt(mots[6]), null, mots[0], indice));
                     }
                     line = buf.readLine();
                     indice++;
@@ -176,5 +179,5 @@ public class PlateauDeJeu {
             Logger.getLogger(Monopoly.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    
+
 }

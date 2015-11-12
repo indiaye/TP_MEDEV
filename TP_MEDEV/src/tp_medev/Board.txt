@@ -25,7 +25,7 @@ Indiana Avenue - 220 - 18 - 90 - 1050 - 150 - 150
 Illinois Avenue - 240 - 20 - 100 - 1100 - 150 - 150
 B&O Railroad - 200 - 25
 Atlantic Avenue - 260 - 22 - 110 - 1150 - 150 - 150
-Ventnor Avenue = 260 - 22 - 110 - 1150 - 150 - 150
+Ventnor Avenue - 260 - 22 - 110 - 1150 - 150 - 150
 Water Works - 150
 Marvin Gardens - 280 - 24 - 120 - 1200 - 150 - 150
 Go to Jail

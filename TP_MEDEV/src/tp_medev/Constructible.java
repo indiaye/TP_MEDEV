@@ -29,6 +29,8 @@ public class Constructible extends Achetable {
      */
     public Constructible(int loyerBase, int a, int b, int coutMaison, int coutHotel, int prix, Joueur proprietaire, String nom, int numero) {
         super(prix, proprietaire, nom, numero);
+        nbMaisons = new boolean[6];
+        loyers = new int[6];
         for (int i = 0; i < 6; i++) {
             nbMaisons[i] = false;
         }

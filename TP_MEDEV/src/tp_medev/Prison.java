@@ -28,7 +28,7 @@ public class Prison extends Case {
     */
     @Override
     public String toString() {
-        return "Depart"; 
+        return "Prison"; 
     }
     
      /**
