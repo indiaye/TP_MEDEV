@@ -84,4 +84,31 @@ public class Joueur {
         this.nbtoursatt = nbtoursatt;
     }
     
+    /**
+     * Méthode sans argument dans la classe Joueur qui retourne le nombre de gares possédées par le joueur
+     * @return nombre de gares possédées
+     */
+    public int nbGares(){
+        int n=0;
+        for (Achetable c : possession){
+            if(c instanceof Gare) n++;
+        }
+        return n;
+    }
+    
+    /**
+     * Methode permettant le paiement entre deux joueurs
+     * @param j joueur à payer
+     * @param montant somme à payer
+     * @throws NoMoreMoney exception quand le joueur n'a pas assez d'argent pour payer
+     */
+    public void paiement(Joueur j, int montant) throws NoMoreMoney{
+        if (fortune >= montant){
+            this.fortune -= montant;
+            j.setFortune(j.getFortune()+montant);
+        }
+        else{
+            throw new NoMoreMoney();
+        }
+    }
 }

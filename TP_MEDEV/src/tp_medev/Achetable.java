@@ -51,5 +51,9 @@ public abstract class Achetable extends Case {
     public String toString() {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (this.proprietaire == null ? "Sans propriétaire" : this.proprietaire.getNom());
     }
-
+    
+    public boolean demandeAchetable() {
+        return this.proprietaire == null;
+    }
+    
 }
