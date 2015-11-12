@@ -103,7 +103,5 @@ public class Constructible extends Achetable {
 
     }
     
-    public void demandeConstruction(Joueur j){
-        
-    }
+    
 }

@@ -21,6 +21,7 @@ public class Joueur {
     private int nbToursAtt;
 
     // Constructors
+    
     /**
      * Constructeur de la classe Joueur
      *
@@ -28,7 +29,7 @@ public class Joueur {
      * @param fortune Fortune
      * @param position Position
      * @param possession Liste des possessions
-     * @param emprisonne Statut de liberte
+     * @param emprisonne Statut de liberté
      * @param nbToursAtt Nombre de tours de prison restants
      */
     public Joueur(String nom, int fortune, Case position, ArrayList<Achetable> possession, boolean emprisonne, int nbToursAtt) {
@@ -41,6 +42,7 @@ public class Joueur {
     }
 
     // Getters
+    
     public String getNom() {
         return nom;
     }
@@ -66,6 +68,7 @@ public class Joueur {
     }
 
     // Setters
+    
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -108,7 +111,7 @@ public class Joueur {
     }
 
     /**
-     * Methode permettant le paiement entre deux joueurs
+     * Méthode permettant le paiement entre deux joueurs
      *
      * @param j joueur à payer
      * @param montant somme à payer
@@ -144,7 +147,7 @@ public class Joueur {
     }
 
     /**
-     * prend en paramètre le plateau de jeu, est appelée par le Joueur avance
+     * Prend en paramètre le plateau de jeu, est appelée par le Joueur avance
      * d'une position, vérifie si on est passé par la case départ (dans ce cas +
      * 20000€) et on appelle la fonction interagir de la nouvelle case la
      * position du joueur est
@@ -153,12 +156,20 @@ public class Joueur {
      */
     public void avance(PlateauDeJeu p) throws NoMoreMoney {
         int d = PlateauDeJeu.lanceLeDe(); // résultat du lancé de dé
-        if (p.avance(this.position, d).getNumero() < this.position.getNumero()) {// on est passé par la case départ
+        
+        // Si on passe par la case départ
+        if (p.avance(this.position, d).getNumero() < this.position.getNumero()) {
             this.setFortune(this.getFortune() + 20000); // on lui rajoute 20 000 €
         }
+        
+        // On avance du nombre de case indiqué par le dé
         this.position = p.avance(position, d);
+        
+        // On affche les actions à l'écran
         System.out.println("Le joueur " + this.getNom() + " est à " + this.position.getNom());
         System.out.println("Le joueur "+this.getNom()+" est en "+this.position.getNom());
+        
+        // On lance l'intéraction
         this.position.interagir(this);
     }
 }
