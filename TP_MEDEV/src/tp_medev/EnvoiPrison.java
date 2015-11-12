@@ -11,6 +11,8 @@ package tp_medev;
  */
 public class EnvoiPrison extends Case {
 
+    // Constructor 
+    
     public EnvoiPrison(String nom, int numero) {
         super(nom, numero);
     }

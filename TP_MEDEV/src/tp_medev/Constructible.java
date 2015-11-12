@@ -15,7 +15,7 @@ public class Constructible extends Achetable {
     private int posLoyer;
 
     /**
-     * Attention le dernier paramétre est de la première case du tableau loyers
+     * Attention le dernier paramètre est de la première case du tableau loyers
      *
      * @param loyerBase
      * @param a
@@ -33,7 +33,7 @@ public class Constructible extends Achetable {
             nbMaisons[i] = false;
         }
         this.a = a; //loyer avec une maison
-        this.b = b; //loyer avec un hotel (il faut 4 maison avant)
+        this.b = b; //loyer avec un hotel (il faut 4 maisons avant)
         this.coutMaison = coutMaison;
         this.coutHotel = coutHotel;
         loyers[0] = loyerBase;
