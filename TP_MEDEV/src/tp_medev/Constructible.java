@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package tp_medev;
 
 /**
@@ -11,6 +6,7 @@ package tp_medev;
  */
 public class Constructible extends Achetable {
 
+    private boolean[] nbMaisons;
     private int a;
     private int b;
     private int coutMaison;
@@ -19,7 +15,7 @@ public class Constructible extends Achetable {
     private int posLoyer;
 
     /**
-     * Constructeur de la classe Constructible
+     * Attention le dernier paramétre est de la première case du tableau loyers
      *
      * @param loyerBase
      * @param a
@@ -33,6 +29,9 @@ public class Constructible extends Achetable {
      */
     public Constructible(int loyerBase, int a, int b, int coutMaison, int coutHotel, int prix, Joueur proprietaire, String nom, int numero) {
         super(prix, proprietaire, nom, numero);
+        for (int i = 0; i < 6; i++) {
+            nbMaisons[i] = false;
+        }
         this.a = a; //loyer avec une maison
         this.b = b; //loyer avec un hotel (il faut 4 maison avant)
         this.coutMaison = coutMaison;
@@ -43,7 +42,7 @@ public class Constructible extends Achetable {
     }
 
     /**
-     * Utilisée uniquement dans le constructeur
+     * utilisé uniquement dans le constructeur
      */
     public void remplirLoyer() {
         for (int i = 1; i < 5; i++) {
@@ -57,12 +56,10 @@ public class Constructible extends Achetable {
     }
 
     /**
-     * Affichage de la classe Constructible
      *
-     * @return Affichage de la classe Constructible
+     * @return
      */
     @Override
-
     public String toString() {
 
         String resultat = super.toString() + ", ";
@@ -85,18 +82,18 @@ public class Constructible extends Achetable {
 
         return resultat;
     }
-    
-    /**
-     * Calcule le montant à payer en cas de passage.
-     * Récupère le loyer en fonction du nombre d'habitations.
-     * @return le montant désiré
-     */
 
-    public int calculerCout() {
-        int montant = this.loyers[posLoyer];       
-        return montant;
+    public int calculLoyer(Joueur joueur) {
+        int loyer = 0;
+        try {
+            if ((this.getProprietaire() != null) && (!joueur.getNom().equals(this.getProprietaire().getNom()))) {
+                loyer = this.loyers[posLoyer];
+            }
+        } catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return loyer;
+
     }
-    
-    
-
 }
