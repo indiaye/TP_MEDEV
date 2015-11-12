@@ -10,7 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
-import java.util.List;
+import java.util.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -77,8 +77,6 @@ public class Monopoly {
                         default:
                             plateau.add(new Constructible(Integer.parseInt(mots[2]), Integer.parseInt(mots[3]), Integer.parseInt(mots[4]),
                                     Integer.parseInt(mots[5]), Integer.parseInt(mots[6]), Integer.parseInt(mots[6]), null, mots[0], indice));
-
-                            );
                     }
                 }
             } catch (IOException ex) {
