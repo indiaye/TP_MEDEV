@@ -21,11 +21,12 @@ import java.util.logging.Logger;
 public class Monopoly {
 
     public static PlateauDeJeu chargerPlateau(String filename) {
-
+        // Déclaration des variables du plateau
         ArrayList<Case> plateau = new ArrayList<>();
         LinkedList<Joueur> joueurs = new LinkedList<>();
 
         try {
+            // Chargement des fichiers
             Reader reader = new FileReader(filename);
             BufferedReader buf = new BufferedReader(reader);
             String line;
@@ -35,12 +36,12 @@ public class Monopoly {
                 while (line != null) {
                     String[] mots = line.split(" - ");
                     switch (indice) {
-                        //Depart
+                        // Depart
                         case 0:
                             plateau.add(new Depart(mots[0], indice));
                             break;
 
-                        //Chance    
+                        // Chance    
                         case 2:
                         case 7:
                         case 17:
@@ -50,13 +51,13 @@ public class Monopoly {
                             plateau.add(new Chance(mots[0], indice));
                             break;
 
-                        //Impots
+                        // Impots
                         case 4:
                         case 38:
                             plateau.add(new Impot(mots[0], indice));
                             break;
 
-                        //Gares
+                        // Gares
                         case 5:
                         case 15:
                         case 25:
@@ -64,12 +65,12 @@ public class Monopoly {
                             plateau.add(new Gare(Integer.parseInt(mots[1]), null, mots[0], indice, Integer.parseInt(mots[2])));
                             break;
 
-                        //Prison
+                        // Prison
                         case 10:
                             plateau.add(new Prison(mots[0], indice));
                             break;
 
-                        //Envoie Prison
+                        // Envoie Prison
                         case 30:
                             plateau.add(new EnvoiPrison(mots[0], indice));
                             break;
