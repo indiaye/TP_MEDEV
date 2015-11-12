@@ -6,7 +6,7 @@
 package tp_medev;
 
 /**
- *
+ *test
  * @author Hicham
  */
 public class Chance extends Case {
