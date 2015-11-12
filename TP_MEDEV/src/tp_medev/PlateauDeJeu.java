@@ -54,7 +54,14 @@ public class PlateauDeJeu {
     }
     
     public void affiche(){
-        
+        System.out.println("- Liste des cases : ");
+        for (Case c: plateau){
+            System.out.println("   + " + c.toString());
+        }
+        System.out.println("- Liste des joueurs : ");
+        for (Joueur j:joueurs){
+            System.out.println("   + " + j.toString());
+        }
     }
     
     public void avance(Case c, int d){
