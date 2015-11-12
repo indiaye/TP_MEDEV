@@ -3,7 +3,7 @@ package tp_medev;
 
 /**
  *
- * @author jvuil
+ * @author Groupe H
  */
 public class Constructible extends Achetable {
 
@@ -13,20 +13,22 @@ public class Constructible extends Achetable {
     private int coutHotel;
     private int[] loyers;
     private int posLoyer;
-
-    /**
-     * 
-     * @param a
-     * @param b
-     * @param coutMaison
-     * @param coutHotel
-     * @param loyerBase 
-     * Attention le dernier paramétre est de la première case du tableau loyers
-     * 
-     * Attention SUPER A RAJOUTER !!!!!
-     */
-    public Constructible(int a, int b, int coutMaison, int coutHotel,int loyerBase) {
-        this.a = a; //loyer avec une maison
+    
+/**
+ * Attention le dernier paramétre est de la première case du tableau loyers
+ * @param loyerBase
+ * @param a
+ * @param b
+ * @param coutMaison
+ * @param coutHotel
+ * @param prix
+ * @param proprietaire
+ * @param nom
+ * @param numero 
+ */
+    public Constructible(int loyerBase,int a, int b, int coutMaison, int coutHotel, int prix, Joueur proprietaire, String nom, int numero) {
+        super(prix, proprietaire, nom, numero);
+       this.a = a; //loyer avec une maison
         this.b = b; //loyer avec un hotel (il faut 4 maison avant)
         this.coutMaison = coutMaison;
         this.coutHotel = coutHotel;
@@ -34,8 +36,8 @@ public class Constructible extends Achetable {
         remplirLoyer();
         posLoyer = 0;
     }
+
     
-   
     /**
      * utilisé uniquement dans le constructeur
      */
@@ -58,7 +60,7 @@ public class Constructible extends Achetable {
 
         
         String resultat = super.toString() + ", ";
-        switch (posloyer) {
+        switch (posLoyer) {
             case 0:
                 resultat += "Pas de maison, ";
                 break;
@@ -69,11 +71,11 @@ public class Constructible extends Achetable {
                 resultat += "1 hotel, ";
                 break;
             default:
-                resultat += posloyer + " maisons, ";
+                resultat += posLoyer + " maisons, ";
         }
         
         resultat += "loyer = " ;
-        resultat += this.loyer[posloyer];
+        resultat += this.loyers[posLoyer];
         
         return resultat; 
     }
