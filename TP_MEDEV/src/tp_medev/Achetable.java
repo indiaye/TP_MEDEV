@@ -70,6 +70,10 @@ public abstract class Achetable extends Case {
         return this.proprietaire == null;
     }
     
+    /**
+     * Affichage de classe Achetable
+     * @return Affichage de la classe Achetable
+     */
     @Override
     public String toString() {
         return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (demandeAchetable() ? "Sans propriétaire" : this.proprietaire.getNom());
@@ -82,6 +86,7 @@ public abstract class Achetable extends Case {
      * Sinon vérifie s'il a un loyer à payer (et le lui fait payer)
      * @param j le joueur concerné
      */
+    @Override
     public void interagir(Joueur j){
         if(this.proprietaire == null){
             this.demandeAchat(j);
@@ -101,23 +106,16 @@ public abstract class Achetable extends Case {
      * 
      * @param j le joueur arrivant sur la case
      */
-    public void demandeLoyer(Joueur j){
-        
+    public void demandeLoyer(Joueur j) {
+        // Déclaration des varaibles
         int montant = 0;
-        
-        if (!this.proprietaire.equals(j)){ // vérifie si le joueur concerné n'est pas le propriétaire
-            if (this instanceof Gare){ // s'il s'agit d'une gare, calculer le coût d'une gare
-                montant = ((Gare)this).calculLoyer(j);
+
+        if (!this.proprietaire.equals(j)) { // vérifie si le joueur concerné n'est pas le propriétaire
+            if (this instanceof Gare) { // s'il s'agit d'une gare, calculer le coût d'une gare
+                montant = ((Gare) this).calculLoyer(j);
             } else { // sinon calculer le coût d'une propriété lambda
-                montant = ((Constructible)this).calculLoyer(j);
+                montant = ((Constructible) this).calculLoyer(j);
             }
-            
-            try { // effectue la transaction entre le joueur et le propiétaire
-                j.paiement(this.proprietaire, montant);
-            } catch (NoMoreMoney ex) {
-                Logger.getLogger(Achetable.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
         }
     }
     
