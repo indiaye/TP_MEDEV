@@ -104,7 +104,21 @@ public class PlateauDeJeu {
     }
 
     public void tourDeJeu() {
+        Iterator it = joueurs.iterator();
+        while (!finDePartie()) {
 
+            if (it.hasNext()) {
+                Joueur joueur = it.next();
+                try {
+                    joueur.avance(this);
+                } catch (NoMoreMoney e) {
+                    it.remove();
+                }
+            } else {
+                it = joueurs.iterator();
+
+            }
+        }
     }
 
     public void init(String filename) {
