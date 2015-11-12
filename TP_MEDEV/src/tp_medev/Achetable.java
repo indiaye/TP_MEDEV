@@ -106,16 +106,22 @@ public abstract class Achetable extends Case {
      * Suppose que la case a un propriétaire.
      * 
      * @param j le joueur arrivant sur la case
+     * @throws tp_medev.NoMoreMoney
      */
     public void demandeLoyer(Joueur j) {
-        // Déclaration des varaibles
-        int montant = 0;
-
+        
         if (!this.proprietaire.equals(j)) { // vérifie si le joueur concerné n'est pas le propriétaire
+            int montant = 0;
             if (this instanceof Gare) { // s'il s'agit d'une gare, calculer le coût d'une gare
                 montant = ((Gare) this).calculLoyer(j);
             } else { // sinon calculer le coût d'une propriété lambda
                 montant = ((Constructible) this).calculLoyer(j);
+            }
+            
+            try {
+                j.paiement(this.proprietaire, montant); // effectue le paiement du joueur envers le propriétaire
+            } catch (NoMoreMoney ex) {
+                System.out.println(ex.getMessage());
             }
         }
     }
