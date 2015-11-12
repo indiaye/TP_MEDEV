@@ -49,7 +49,7 @@ public abstract class Achetable extends Case {
 
     @Override
     public String toString() {
-        return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + this.proprietaire.getNom();
+        return this.getNom() + " ( prix : " + this.getPrix() + "E ) - " + (this.proprietaire == null ? "Sans propriétaire" : this.proprietaire.getNom());
     }
 
 }
