@@ -51,8 +51,16 @@ public class PlateauDeJeu {
     
     public void nbGare(Joueur j){
         
+    /**
+     * Prend en paramètre le Joueur, et retourne son nombre de gare possédées
+     * @param j joueur
+     * @return nombre de gares possédées
+     */
+    public int nbGares(Joueur j){
+        return j.nbGares();
     }
     
+
     public void affiche(){
         
     }
@@ -69,6 +77,12 @@ public class PlateauDeJeu {
     
     public void finDePartie(){
         
+    /**
+     * return true s'il n'y a plus qu'un joueur en jeu, false sinon
+     * @return 
+     */
+    public boolean findePartie(){
+        return joueurs.size()==1;
     }
     
     public void tourDeJeu(){
