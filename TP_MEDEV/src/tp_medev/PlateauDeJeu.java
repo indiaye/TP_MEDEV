@@ -54,7 +54,7 @@ public class PlateauDeJeu {
         
     }
     
-    /**
+    /** nbGares 
      * Prend en paramètre le Joueur, et retourne son nombre de gare possédées
      * @param j joueur
      * @return nombre de gares possédées
@@ -79,7 +79,10 @@ public class PlateauDeJeu {
         return c;
     }
     
-    // Lance le dé pour avancer
+    /** Lance le dé pour avancer
+     *  Détermine une valeur aléatoire 
+     * @return Une valeur de dé
+     */
 
     public static int lanceLeDe() {
         return ((int) Math.floor(Math.random() * 6)) + 1;
