@@ -28,10 +28,15 @@ public class Gare extends Achetable {
         this.coefGare = coefGare;
     }
 
+    
+    // Getters
+    
     public int getCoefGare() {
         return coefGare;
     }
 
+    // Setters
+    
     public void setCoefGare(int coefGare) {
         this.coefGare = coefGare;
     }
@@ -48,6 +53,11 @@ public class Gare extends Achetable {
         return montant;
     }
 
+    /**
+     * Calcule
+     *
+     * @return 
+     */
     public int calculLoyer(Joueur joueur) {
         int loyer;
         loyer = 0;
