@@ -11,11 +11,21 @@ package tp_medev;
  */
 public class Chance extends Case {
 
+    // Constructors
+    
+    /**
+    * Constructeur de la classe Case
+    * @param nom    Nom
+    * @param numero Numero
+    */
     public Chance(String nom, int numero) {
         super(nom, numero);
     }
     
-    
+    /**
+    * Affichage de la case Chance
+    * @return Affichage de la case Chance
+    */
     @Override
     public String toString() {
         return "Chance";
