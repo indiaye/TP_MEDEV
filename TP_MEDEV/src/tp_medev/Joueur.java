@@ -123,4 +123,14 @@ public class Joueur {
             throw new NoMoreMoney(); // exception lancée (veut dire qu'il est en bankrupt)
         }
     }
+    // Not tested yet. manque case.getnom et achetable.tostring(gare et constructible) PAUSE CLOPE
+    public String toString(){
+        String res="";
+        res="Nom : "+nom+"\n"
+                +"Fortune : "+fortune+"\n";
+        for (Achetable a:possession){
+            res=res+a.toString();
+        }
+        res=res+"\n"+"Position : "+position.getNom();    
+    }
 }
