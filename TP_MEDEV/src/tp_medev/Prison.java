@@ -11,8 +11,12 @@ package tp_medev;
  */
 public class Prison extends Case {
 
-    public Prison(String Nom, int Numero) {
-        super(Nom, Numero);
+    public Prison(String nom, int numero) {
+        super(nom, numero);
     }
     
+    @Override
+    public String toString() {
+        return "Depart"; 
+    }   
 }

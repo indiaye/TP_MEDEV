@@ -32,11 +32,11 @@ public abstract class Case {
     
     // Setters
 
-    public void setNom(String Nom) {
+    public void setNom(String nom) {
         this.nom = nom;
     }
 
-    public void setNumero(int Numero) {
+    public void setNumero(int numero) {
         this.numero = numero;
     }    
     

@@ -7,12 +7,17 @@ package tp_medev;
 
 /**
  *
+<<<<<<< HEAD
  * @author Seb
  */
 public class Depart extends Case {
 
-    public Depart(String Nom, int Numero) {
-        super(Nom, Numero);
+    public Depart(String nom, int numero) {
+        super(nom, numero);
     }
     
+    @Override
+    public String toString() {
+        return "Depart"; 
+    }   
 }
