@@ -10,34 +10,34 @@ package tp_medev;
  * @author Hicham
  */
 public abstract class Case {
-    private String Nom;
-    private int Numero;
+    private String nom;
+    private int numero;
     
     // Constructors
 
-    public Case(String Nom, int Numero) {
-        this.Nom = Nom;
-        this.Numero = Numero;
+    public Case(String nom, int numero) {
+        this.nom = nom;
+        this.numero = numero;
     }
     
     // Getters
 
     public String getNom() {
-        return Nom;
+        return nom;
     }
 
     public int getNumero() {
-        return Numero;
+        return numero;
     }
     
     // Setters
 
     public void setNom(String Nom) {
-        this.Nom = Nom;
+        this.nom = nom;
     }
 
     public void setNumero(int Numero) {
-        this.Numero = Numero;
+        this.numero = numero;
     }    
     
     /**
