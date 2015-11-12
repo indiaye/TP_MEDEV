@@ -36,6 +36,7 @@ public class Constructible extends Achetable {
         this.b = b; //loyer avec un hotel (il faut 4 maisons avant)
         this.coutMaison = coutMaison;
         this.coutHotel = coutHotel;
+         loyers = new int[6];
         loyers[0] = loyerBase;
         remplirLoyer();
         posLoyer = 0;
