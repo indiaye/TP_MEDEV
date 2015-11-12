@@ -54,4 +54,18 @@ public class Gare extends Achetable {
         return montant;
     }
 
+     public int calculLoyer(Joueur joueur) {
+        int loyer;
+        try {
+            if ((this.getProprietaire() != null) && (!joueur.getNom().equals(this.getProprietaire().getNom())) ){
+                loyer = proprietaire.nbGares() * 2500;
+                                }
+                }
+catch (NullPointerException e) {
+            System.out.println(e.getMessage());
+        }
+
+        return loyer;
+
+    }
 }
