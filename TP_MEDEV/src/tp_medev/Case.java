@@ -46,9 +46,10 @@ public abstract class Case {
     }    
     
     /**
-     * @author jvuil
-     * @return String de l'objet Case
-     */
+    * Méthode abstraite d'affichage des cases
+    * @return Affichage des cases
+    */
+    @Override
     public abstract String toString();
     
     // public abstract void interagir(Joueur j);
