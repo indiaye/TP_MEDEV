@@ -11,9 +11,6 @@ package tp_medev;
  */
 public class Constructible extends Achetable {
 
-<<<<<<< HEAD
-
-=======
     private int a;
     private int b;
     private int coutMaison;
@@ -63,7 +60,6 @@ public class Constructible extends Achetable {
     * Affichage de la classe Constructible
     * @return Affichage de la classe Constructible
     */
->>>>>>> origin/master
     @Override
     public String toString() {
 

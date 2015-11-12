@@ -11,7 +11,6 @@ package tp_medev;
  */
 public class Chance extends Case {
 
-<<<<<<< HEAD
     private int nb;
 
     /**
@@ -32,11 +31,6 @@ public class Chance extends Case {
         this.nb = nb;
     }
 
-    public Chance(String nom, int numero) {
-        super(nom, numero);
-    }
-
-=======
     // Constructors
     
     /**
@@ -52,7 +46,6 @@ public class Chance extends Case {
     * Affichage de la case Chance
     * @return Affichage de la case Chance
     */
->>>>>>> origin/master
     @Override
     public String toString() {
         return "Chance";
