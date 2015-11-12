@@ -11,7 +11,7 @@ package tp_medev;
  */
 public class Depart extends Case {
     
-// Constructors
+    // Constructors
     
     /**
     * Constructeur de la classe Depart
