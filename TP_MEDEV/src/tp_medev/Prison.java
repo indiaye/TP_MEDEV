@@ -7,6 +7,7 @@ package tp_medev;
 
 /**
  *
+<<<<<<< HEAD
  * @author Seb
  */
 public class Prison extends Case {

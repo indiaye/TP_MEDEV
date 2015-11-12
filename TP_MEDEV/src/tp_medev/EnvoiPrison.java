@@ -7,12 +7,12 @@ package tp_medev;
 
 /**
  *
- * @author Hicham
+ * @author jvuil
  */
-public class Chance extends Case {
-    
-    
+public class EnvoiPrison extends Case {
+
+    @Override
     public String toString() {
-        return "Chance";
+        return "Envoi Prison";
     }
 }

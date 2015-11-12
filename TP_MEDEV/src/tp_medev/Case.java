@@ -42,6 +42,7 @@ public abstract class Case {
     
     /**
      * @author jvuil
+     * @return String de l'objet Case
      */
     public abstract String toString();
 }
