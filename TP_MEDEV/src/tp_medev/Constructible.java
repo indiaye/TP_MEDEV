@@ -38,6 +38,7 @@ public class Constructible extends Achetable {
         this.b = b; //loyer avec un hotel (il faut 4 maisons avant)
         this.coutMaison = coutMaison;
         this.coutHotel = coutHotel;
+         loyers = new int[6];
         loyers[0] = loyerBase;
         remplirLoyer();
         posLoyer = 0;
@@ -87,12 +88,9 @@ public class Constructible extends Achetable {
     
     /**
      * Calcul du coût de construction
+     * @param joueur
      * @return Cout de construction
      */
-    @Override
-    public int calculerCout() {
-        return 0;
-    }
 
     public int calculLoyer(Joueur joueur) {
         int loyer = 0;

@@ -5,6 +5,7 @@
  */
 package tp_medev;
 
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -20,11 +21,11 @@ public abstract class Achetable extends Case {
     // Constructors
 
     /**
-    * Constructeur de la classe Achetable avec proprietaire
+    * Constructeur de la classe Achetable avec propriétaire
     * @param prix         Prix
-    * @param proprietaire Proprietaire
+    * @param proprietaire Propriétaire
     * @param nom          Nom
-    * @param numero       Numero
+    * @param numero       Numéro
     */
     public Achetable(int prix, Joueur proprietaire, String nom, int numero) {
         super(nom, numero);
@@ -33,10 +34,10 @@ public abstract class Achetable extends Case {
     }
 
     /**
-    * Constructeur de la classe Achetable sans proprietaire
+    * Constructeur de la classe Achetable sans propriétaire
     * @param prix         Prix
     * @param nom          Nom
-    * @param numero       Numero
+    * @param numero       Numéro
     */
     public Achetable(int prix, String nom, int numero) {
         super(nom, numero);
@@ -63,8 +64,8 @@ public abstract class Achetable extends Case {
     }  
     
     /**
-    * Constructeur de la classe Achetable avec proprietaire
-    * @return Boolean si achetable
+    * Vérifie si le terrain est achetable
+    * @return Vrai si achetable
     */
     public boolean demandeAchetable() {
         return this.proprietaire == null;
@@ -105,36 +106,43 @@ public abstract class Achetable extends Case {
      * Suppose que la case a un propriétaire.
      * 
      * @param j le joueur arrivant sur la case
+     * @throws tp_medev.NoMoreMoney
      */
-    public void demandeLoyer(Joueur j){
-        // Déclaration des varaibles
-        int montant;
+    public void demandeLoyer(Joueur j) {
         
-        // vérifie si le joueur concerné n'est pas le propriétaire
-        if (!this.proprietaire.equals(j)){
-            // S'il s'agit d'une gare, calculer le coût d'une gare
-            if (this instanceof Gare){ 
-                montant = ((Gare)this).calculerCout();
-            } 
-            // Sinon calculer le coût d'une propriété lambda
-            else { 
-                montant = ((Constructible)this).calculerCout();
+        if (!this.proprietaire.equals(j)) { // vérifie si le joueur concerné n'est pas le propriétaire
+            int montant = 0;
+            if (this instanceof Gare) { // s'il s'agit d'une gare, calculer le coût d'une gare
+                montant = ((Gare) this).calculLoyer(j);
+            } else { // sinon calculer le coût d'une propriété lambda
+                montant = ((Constructible) this).calculLoyer(j);
             }
             
-            // Effectue la transaction entre le joueur et le propiétaire
-            try { 
-                j.paiement(this.proprietaire, montant);
+            try {
+                j.paiement(this.proprietaire, montant); // effectue le paiement du joueur envers le propriétaire
             } catch (NoMoreMoney ex) {
-                Logger.getLogger(Achetable.class.getName()).log(Level.SEVERE, null, ex);
+                System.out.println(ex.getMessage());
             }
-            
         }
     }
     
-    public abstract int calculerCout();
+    public abstract int calculLoyer(Joueur j);
     
-    public void demandeAchatJoueur(Joueur j){
+    public void demandeAchatJoueur(Joueur j) throws NoMoreMoney{
         
-        System.out.println("");
+        System.out.println("Voulez vous acheter cette propriété? Oui (1) ou Non (0)");
+        Scanner scan = new Scanner (System.in);
+        int choix = scan.nextInt();
+        if (choix==1){
+            if (j.getFortune()-prix>0){
+                j.setFortune(j.getFortune()-prix);
+                proprietaire=j;
+            }
+            else{
+                throw new NoMoreMoney();
+            }
+        }
+        
+        
     }
 }
